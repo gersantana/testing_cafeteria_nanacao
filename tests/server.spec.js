@@ -22,7 +22,7 @@ describe("Operaciones CRUD de cafes", () => {
     it('POST/cafes agrega un nuevo café y devuelve un status code 201', async () => {
       const newCafe = {
         id: 40, // Reemplaza con un ID que no exista
-        // Otros campos del café
+        nombre: "Guayoyo"
       };
       const response = await request(server)
         .post('/cafes')
@@ -36,7 +36,7 @@ describe("Operaciones CRUD de cafes", () => {
     const cafeIdBody = cafeIdParametro + 5
     const cafeToUpdate = {
       id: cafeIdBody, // Reemplaza con el ID de un café existente
-      nombre: "Mocacino"
+      nombre: "Negrito"
     };
     const response = await request(server)
       .put(`/cafes/${cafeIdParametro}`)
