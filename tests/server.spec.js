@@ -5,7 +5,7 @@ describe("Operaciones CRUD de cafes", () => {
   it('GET/cafes devuelve un status code 200 y un arreglo con al menos 1 objeto', async () => {
       const response = await request(server).get('/cafes');
       expect(response.status).toBe(200);
-      expect(Array.isArray(response.body)).toBe(true);
+      expect(response.body).toBeInstanceOf(Array);
       expect(response.body.length).toBeGreaterThan(0);
     });
 
